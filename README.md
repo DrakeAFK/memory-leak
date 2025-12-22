@@ -1,2 +1,2 @@
-# color-memory
-A Memory Game Based on Colors written in Javascript
+# Torvalds Test
+raw JS memory game 
