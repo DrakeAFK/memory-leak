@@ -1,61 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=VT323&display=swap" rel="stylesheet">
-
-
-  <title>Torvalds Test | DrakeAFK</title>
-  <link rel="icon" href="favicon/color_favicon.ico" type="image/x-icon">
-
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>MEMORY_LEAK // Void Terminal</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <h1 id="game-title">Ready?<br><button class="start">Play Now</button></h1>
+  <div id="game-title">
+    <div class="title-main">MEMORY_LEAK</div>
+    <div id="sub-title">READY_FOR_INIT</div>
+    <button class="start">INITIALIZE_SESSION</button>
+  </div>
 
   <div class="container">
     <div class="row">
-
-      <div type="button" id="green" class="btn green">
-
-      </div>
-
-      <div type="button" id="red" class="btn red">
-
-      </div>
+      <div id="green" class="btn green"></div>
+      <div id="red" class="btn red"></div>
     </div>
-
     <div class="row">
-
-      <div type="button" id="yellow" class="btn yellow">
-
-      </div>
-      <div type="button" id="blue" class="btn blue">
-
-      </div>
-
+      <div id="yellow" class="btn yellow"></div>
+      <div id="blue" class="btn blue"></div>
     </div>
-
   </div>
-<br>
-<br>
-  <footer>
-    <a href="https://github.com/drakeafk/torvalds-test">View on GitHub</a>
-    <p>Made by Drake Hopkins</p>
-    <br>
-    <br>
-  </footer>
 
+  <div class="status-bar">
+    <div class="status-item accent">[STATUS: <span id="game-status">IDLE</span>]</div>
+    <div class="status-item">[SESSION_LVL: <span id="hud-level">0</span>]</div>
+    <div class="status-item">[LATENCY: <span id="latency">0</span>MS]</div>
+    <div class="status-item">[TP_RATIO: <span id="bps">0.0</span>]</div>
+    <div style="flex-grow: 1;"></div>
+    <div class="status-item"><a href="https://github.com/drakeafk/torvalds-test">SRC_FILE</a></div>
+  </div>
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="game.js"></script>
 </body>
 

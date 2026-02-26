@@ -1,77 +1,184 @@
+:root {
+  --bg: #050505;
+  --surface: #0a0a0a;
+  --border: #1a1a1a;
+  --text-main: #f8f8f8;
+  --text-dim: #555555;
+  --accent: #f8f8f8;
+  /* Bone white as default accent */
+  --green: #00ff41;
+  --red: #ff3131;
+  --yellow: #ffdf00;
+  --blue: #007aff;
+}
+
 body {
-  text-align: center;
-  background-color: #071C21;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: 'JetBrains Mono', 'Space Mono', monospace;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #game-title {
-  font-family: 'VT323', monospace;
-  font-size: 3rem;
-  margin: 5%;
-  color: #C6DE41;
-  line-height: 5rem;
-  text-align: center;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--text-dim);
+  margin-bottom: 4rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.title-main {
+  color: var(--text-main);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
 .container {
-  display: block;
-  width: 50%;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background-color: var(--border);
+  padding: 2px;
+  border-radius: 4px;
+}
 
+.row {
+  display: flex;
+  gap: 2px;
 }
 
 .btn {
-  margin: 25px;
-  display: inline-block;
-  height: 5rem;
-  width: 5rem;
-  border-radius: 20%;
-}  
-
-
-.game-over {
-  background-color: red;
-  opacity: 0.8;
+  width: 140px;
+  height: 140px;
+  background-color: var(--bg);
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.red {
-  background-color: red;
+.btn:hover {
+  background-color: var(--surface);
 }
 
-.green {
-  background-color: green;
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.1s;
+  pointer-events: none;
 }
 
-.blue {
-  background-color: blue;
+/* Active states with minimalist glow */
+.green.pressed {
+  background-color: var(--green);
+  box-shadow: 0 0 40px rgba(0, 255, 65, 0.3);
 }
 
-.yellow {
-  background-color: yellow;
+.red.pressed {
+  background-color: var(--red);
+  box-shadow: 0 0 40px rgba(255, 49, 49, 0.3);
+}
+
+.yellow.pressed {
+  background-color: var(--yellow);
+  box-shadow: 0 0 40px rgba(255, 223, 0, 0.3);
+}
+
+.blue.pressed {
+  background-color: var(--blue);
+  box-shadow: 0 0 40px rgba(0, 122, 255, 0.3);
 }
 
 .pressed {
-  box-shadow: 0 0 20px white;
-  background-color: grey;
-}
-
-footer{
-  color: #C6DE41;
-  font-family: 'VT323', monospace;
-  font-size: 1.25rem;
-}
-
-a{
-  color: #C6DE41;
-}
-
-a:hover{
-  color: white;
+  transform: scale(0.98);
 }
 
 .start {
-  background-color: #C6DE41;
-  width: 5rem;
-  height: 5rem;
-  font-family: 'VT323', monospace;
-  font-size: 2rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+  padding: 0.8rem 2rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.2s;
+}
+
+.start:hover {
+  background: var(--text-main);
+  color: var(--bg);
+  border-color: var(--text-main);
+}
+
+/* Status Bar */
+.status-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  border-top: 1px solid var(--border);
+  background-color: var(--bg);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  gap: 1.5rem;
+}
+
+.status-item span {
+  color: var(--text-main);
+  margin-left: 0.3rem;
+}
+
+.status-item.accent span {
+  color: var(--green);
+}
+
+.game-over {
+  animation: flash-red 0.2s infinite;
+}
+
+@keyframes flash-red {
+
+  0%,
+  100% {
+    background-color: var(--bg);
+  }
+
+  50% {
+    background-color: #1a0505;
+  }
+}
+
+footer {
+  margin-top: 5rem;
+  opacity: 0.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

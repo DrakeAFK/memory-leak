@@ -1,0 +1,19 @@
+{
+  "name": "memory-leak",
+  "version": "1.0.0",
+  "description": "Ultra-minimalist JS memory game with an Obsidian terminal aesthetic.",
+  "main": "game.js",
+  "scripts": {
+    "start": "npx servor"
+  },
+  "keywords": [
+    "memory",
+    "game",
+    "minimalist",
+    "terminal",
+    "vim",
+    "neovim"
+  ],
+  "author": "Drake Hopkins",
+  "license": "MIT"
+}
